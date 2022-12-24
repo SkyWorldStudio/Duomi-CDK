@@ -1,0 +1,23 @@
+dataBase:
+  #数据库使用类型: MYSQL SQLITE
+  type: SQLITE
+
+  #以下为 SQLite 配置
+  #=====------=====
+  #文件名
+  filename: database.db
+  #=====------=====
+
+  #以下为 MYSQL 配置
+  #=====------=====
+  #主机地址
+  hostname: 127.0.0.1
+  #端口
+  port: 3306
+  #用户名
+  username: root
+  #密码
+  password: root
+  #数据库名
+  database: Duomi
+  #=====------=====
