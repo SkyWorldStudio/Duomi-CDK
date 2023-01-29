@@ -21,3 +21,6 @@ dataBase:
   #数据库名
   database: Duomi
   #=====------=====
+config:
+  #一个页面展示多少个信息
+  onePageShow: 10

@@ -49,7 +49,7 @@ public class RewardListCache {
      */
     public static Reward get(String name) {
         PreparedStatement ps = DuomiCDK.INSTANCE.sqlManager.getSQLRun(
-                "SELECT * FROM Cdk_rewards WHERE (name=?);"
+                "SELECT * FROM Cdk_rewards WHERE name=?;"
         );
 
         try {
@@ -120,7 +120,7 @@ public class RewardListCache {
      */
     public static void updateReward(Reward reward) {
         PreparedStatement ps = DuomiCDK.INSTANCE.sqlManager.getSQLRun(
-                "UPDATE Cdk_rewards SET commands=? WHERE (name=?);"
+                "UPDATE Cdk_rewards SET commands=? WHERE name=?;"
         );
 
         try {

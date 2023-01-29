@@ -2,6 +2,7 @@ package io.github.xiaoyi311.duomicdk;
 
 import io.github.xiaoyi311.duomicdk.cache.CDKListCache;
 import io.github.xiaoyi311.duomicdk.cache.RewardListCache;
+import io.github.xiaoyi311.duomicdk.common.ArrayUtils;
 import io.github.xiaoyi311.duomicdk.common.MessageFormat;
 import io.github.xiaoyi311.duomicdk.common.SQLManager;
 import org.bukkit.Bukkit;
@@ -17,14 +18,6 @@ import java.util.logging.Logger;
 
 /**
  * Duomi CDK 主类
- * 添加：
- * 1. 删除指定奖励内cdk
- * 2. cdk列表分页
- * 3. 自定义使用次数
- * 4. 接入 bstar
- * 5. 自动清理
- * 6. 多类型
- * 7. 自动补全
  */
 public final class DuomiCDK extends JavaPlugin {
     /**
@@ -56,7 +49,7 @@ public final class DuomiCDK extends JavaPlugin {
         logger.info("========= DuomiCDK 正在启动 =========");
         logger.info("作者 -> Xiaoyi311");
         logger.info("制作团队 -> SkyWorldStudio");
-        logger.info("版本 -> v1.0.1");
+        logger.info("版本 -> v1.1.0");
         logger.info("数据模式 -> " + config.getString("dataBase.type", "SQLITE"));
 
         //注册命令
@@ -127,8 +120,8 @@ public final class DuomiCDK extends JavaPlugin {
                         """
                 ));
 
-                CDKListCache.update();
                 RewardListCache.update();
+                CDKListCache.update();
             }
         }.runTaskAsynchronously(DuomiCDK.INSTANCE);
     }
@@ -141,7 +134,9 @@ public final class DuomiCDK extends JavaPlugin {
         INSTANCE = this;
         logger = getLogger();
         config = getConfig();
+
         MessageFormat.prefix = "&e[&3Duomi-CDK&e] ";
+        ArrayUtils.pageObjCount = config.getInt("config.onePageShow", 10);
     }
 
     /**
@@ -169,7 +164,7 @@ public final class DuomiCDK extends JavaPlugin {
                       &eDuomi 系列插件 &bDuomi-CDK
                       """
         ));
-        sender.sendMessage(MessageFormat.getMessageDefault("&e插件版本:&b 1.0.1"));
+        sender.sendMessage(MessageFormat.getMessageDefault("&e插件版本:&b 1.1.0"));
         sender.sendMessage(MessageFormat.getMessageDefault("&e主编:&b Xiaoyi311"));
         sender.sendMessage(MessageFormat.getMessageDefault("&e开发团队:&b SkyWorldStudio"));
         sender.sendMessage(MessageFormat.getMessageDefault("&e团队官网:&b https://skyworldstudio.top"));

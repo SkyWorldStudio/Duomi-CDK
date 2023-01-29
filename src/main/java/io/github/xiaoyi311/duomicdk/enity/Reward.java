@@ -8,6 +8,7 @@ import org.bukkit.entity.Player;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * 奖励实体
@@ -38,6 +39,19 @@ public class Reward {
         this.name = name;
         this.commands = commands == null ? new ArrayList<>() : new ArrayList<>(Arrays.asList(commands.split(",")));
         this.tip = tip;
+    }
+
+    /**
+     * 添加一个归属于该奖励的命令
+     *
+     * @param command 命令
+     */
+    public void addCommand(String command){
+        if(!Objects.equals(commands.get(0), "")){
+            commands.add(command);
+            return;
+        }
+        commands.set(0, command);
     }
 
     /**

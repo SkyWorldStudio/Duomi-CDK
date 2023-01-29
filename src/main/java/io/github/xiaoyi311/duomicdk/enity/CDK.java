@@ -51,7 +51,7 @@ public class CDK {
         this.reward = reward;
         this.time = time;
         this.canUse = canUse;
-        this.player = player == null ? new ArrayList<>() : Arrays.stream(player.split(",")).toList();
+        this.player = player == null ? new ArrayList<>() : new ArrayList<>(Arrays.asList(player.split(",")));
     }
 
     /**
