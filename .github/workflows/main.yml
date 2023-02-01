@@ -32,14 +32,14 @@ jobs:
       uses: actions/upload-artifact@v2.3.1
       if: success()
       with:
-        name: SmokerPlugin.zip
-        path: /home/runner/work/SmokerPlugin/SmokerPlugin/target/*.jar
+        name: DuomiCDK.zip
+        path: /home/runner/work/Duomi-CDK/Duomi-CDK/target/*.jar
     - name: Upload Code
       uses: actions/upload-artifact@v2.3.1
       if: success()
       with:
         name: Code.zip
-        path: /home/runner/work/SmokerPlugin/SmokerPlugin/src
+        path: /home/runner/work/Duomi-CDK/Duomi-CDK/src
     
   MakeRelease:
     runs-on: ubuntu-latest
