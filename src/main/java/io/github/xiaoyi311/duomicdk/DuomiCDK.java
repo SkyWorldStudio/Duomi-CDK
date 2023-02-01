@@ -166,7 +166,7 @@ public final class DuomiCDK extends JavaPlugin {
         ));
         sender.sendMessage(MessageFormat.getMessageDefault("&e插件版本:&b 1.1.0"));
         sender.sendMessage(MessageFormat.getMessageDefault("&e主编:&b Xiaoyi311"));
-        sender.sendMessage(MessageFormat.getMessageDefault("&e开发团队:&b SkyWorldStudio"));
-        sender.sendMessage(MessageFormat.getMessageDefault("&e团队官网:&b https://skyworldstudio.top"));
+        sender.sendMessage(MessageFormat.getMessageDefault("&e代码仓库:&b https://github.com/Xiaoyi311/Duomi-CDK"));
+        sender.sendMessage(MessageFormat.getMessageDefault("&e帮助文档:&b https://duomicdk.mcgame.tk"));
     }
 }
