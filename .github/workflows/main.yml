@@ -28,19 +28,12 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn clean package
-    
-  MakeRelease:
-    runs-on: ubuntu-latest
-    
-    steps:
     - name: Create Release
       uses: ncipollo/release-action@v1.12.0
       with:
         allowUpdates: true
         artifactErrorsFailBuild: true
         artifact: "/home/runner/work/Duomi-CDK/Duomi-CDK/target/DuomiCDK-${{ github.event.inputs.Version }}.jar"
-        body: "${{ github.event.inputs.Message }}"
+        body: ${{ github.event.inputs.Message }}
         tag: ${{ github.event.inputs.Version }}
         token: ${{ secrets.GITHUB_TOKEN }}
-    
-    needs: Build
