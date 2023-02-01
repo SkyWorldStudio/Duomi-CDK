@@ -7,11 +7,11 @@ on:
   workflow_dispatch:
     inputs:
       Version:
-        description: 'Version (vx.x.x)'     
+        description: 'Version (x.x.x)'     
         required: true
       Message:
         required: true
-        description: 'Message (x.x.x Update:<br>)'
+        description: 'Message'
 
 jobs:
   Build:
@@ -28,33 +28,19 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn clean package
-    - name: Upload a Build
-      uses: actions/upload-artifact@v2.3.1
-      if: success()
-      with:
-        name: DuomiCDK.zip
-        path: /home/runner/work/Duomi-CDK/Duomi-CDK/target/*.jar
-    - name: Upload Code
-      uses: actions/upload-artifact@v2.3.1
-      if: success()
-      with:
-        name: Code.zip
-        path: /home/runner/work/Duomi-CDK/Duomi-CDK/src
     
   MakeRelease:
     runs-on: ubuntu-latest
     
     steps:
     - name: Create Release
-      id: create_release
-      uses: actions/create-release@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      uses: ncipollo/release-action@v1.12.0
       with:
-        tag_name: ${{ github.event.inputs.Version }}
-        release_name: Release ${{ github.event.inputs.Version }}
-        body: "${{ github.event.inputs.Message }}<br>下载请前往 Workflow(Actions)"
-        draft: false
-        prerelease: false
+        allowUpdates: true
+        artifactErrorsFailBuild: true
+        artifact: "/home/runner/work/Duomi-CDK/Duomi-CDK/target/DuomiCDK-${{ github.event.inputs.Version }}.jar"
+        body: "${{ github.event.inputs.Message }}"
+        tag: ${{ github.event.inputs.Version }}
+        token: ${{ secrets.GITHUB_TOKEN }}
     
     needs: Build
