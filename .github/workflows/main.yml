@@ -33,7 +33,7 @@ jobs:
       with:
         allowUpdates: true
         artifactErrorsFailBuild: true
-        artifact: "/home/runner/work/Duomi-CDK/Duomi-CDK/target/DuomiCDK-${{ github.event.inputs.Version }}.jar"
+        artifacts: "/home/runner/work/Duomi-CDK/Duomi-CDK/target/DuomiCDK-${{ github.event.inputs.Version }}.jar"
         body: ${{ github.event.inputs.Message }}
         tag: ${{ github.event.inputs.Version }}
         token: ${{ secrets.GITHUB_TOKEN }}
