@@ -1,3 +1,7 @@
 # Table of contents
 
 * [介绍](README.md)
+
+## ⬇ 下载与配置 <a href="#download-config" id="download-config"></a>
+
+* [下载插件](download-config/xia-zai-cha-jian.md)
