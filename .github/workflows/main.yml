@@ -35,5 +35,6 @@ jobs:
         artifactErrorsFailBuild: true
         artifacts: "/home/runner/work/Duomi-CDK/Duomi-CDK/target/DuomiCDK-${{ github.event.inputs.Version }}.jar"
         body: ${{ github.event.inputs.Message }}
-        tag: ${{ github.event.inputs.Version }}
+        name: "Release v${{ github.event.inputs.Version }}"
+        tag: "v${{ github.event.inputs.Version }}"
         token: ${{ secrets.GITHUB_TOKEN }}
