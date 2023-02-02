@@ -85,9 +85,17 @@ short: 6位
 custom: 自定义
 {% endhint %}
 
+{% hint style="info" %}
+限时时间中的 inf 为不限制
+{% endhint %}
+
 ### create \<long/medium/short> \<count> \<reward> \[1m/1h/1d/inf] \[use] \[filename]
 
 创建一个 CDK，从左到右参数分别为：**模式、生成个数、奖励、限时时间、可用次数、导出文件名 (带后缀)**
+
+{% hint style="info" %}
+如果不填写 filename 默认将会导出到 out.json
+{% endhint %}
 
 ### create custom \<cdk> \<reward> \[1m/1h/1d/inf] \[use]
 
@@ -111,6 +119,10 @@ custom: 自定义
 `/reward add <name> /me yeeeee` 这句话便是以非 OP 执行
 
 `/reward add <name> [op]/title @a title yeeeee` 这句话便是以 OP 执行
+{% endhint %}
+
+{% hint style="info" %}
+如果想要获取玩家名可以使用 `{player}` 变量，例如 `[op]/title {player} title yeeeee`
 {% endhint %}
 
 ### reward remove \<name> \[index]
