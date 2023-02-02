@@ -35,6 +35,6 @@ coverY: 0
 
 将 Release 内最新版 jar 文件下载到服务器 plugins 目录即可
 
-### 帮助文档
+### 代码仓库
 
-请见 [Gitbook](./) (你现在不就在吗)
+请见 [Github](https://github.com/Xiaoyi311/Duomi-CDK) Duomi-CDK 项目
