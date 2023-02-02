@@ -9,4 +9,4 @@
 
 ## 📘 使用文档 <a href="#usedoc" id="usedoc"></a>
 
-* [命令列表](usedoc/ming-ling-lie-biao.md)
+* [命令列表](usedoc/commandlist.md)

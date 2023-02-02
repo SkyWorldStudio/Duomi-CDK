@@ -1,5 +1,6 @@
 ---
 description: 所有命令及其功能的列表
+coverY: 0
 ---
 
 # 命令列表
