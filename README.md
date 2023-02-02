@@ -38,4 +38,4 @@
 
 ## 帮助文档
 
-请见 [Github Pages](https://Xiaoyi311.github.io/Duomi-CDK)
+请见 [Gitbook](duomicdk.mcgame.tk) 页面
