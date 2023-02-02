@@ -38,4 +38,4 @@
 
 ## 帮助文档
 
-请见 [Gitbook](duomicdk.mcgame.tk) 页面
+请见 [Gitbook](https://duomicdk.mcgame.tk) 页面
